@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;1,9..144,700&display=swap');
+
+/* - Mobile: 375px
+- Desktop: 1440px */
+
+:root {
+    --dark-cyan: hsl(158, 36%, 37%);
+    --cream: hsl(30, 38%, 92%);
+  
+    /* Neutral colors */
+    --very-dark-blue: hsl(212, 21%, 14%);
+    --dark-grayish-blue: hsl(228, 12%, 48%);
+    --white: hsl(0, 0%, 100%);
+
+    --ff-base: 'Montserrat', sans-serif;
+    --ff-base-fraunces: 'Fraunces', serif; 
+
+    --fs-paragraph: 14px;
+
+    --fw-500: 500;
+    --fw-700: 700;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    font-family: var(--ff-base);
+    display: grid;
+    grid-template-rows: 1fr auto;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--cream);
+}
+
+.preview-card{
+    max-width: 343px;
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white);
+    border-radius: 1em;
+}
+
+@media(min-width: 700px){
+    .preview-card{
+        max-width: 600px;
+        flex-direction: row;
+    }
+
+    .image-content, .text-content{
+        flex: 1;
+    }
+
+    .preview-card .image-content img{
+        border-radius: 1em 0 0 1em;
+        width: auto;
+        object-fit: cover;
+        height: 100%;
+    }
+}
+
+.image-content img{
+    max-width: 100%;
+    border-radius: 1em 1em 0 0;
+}
+
+.text-content{
+    display: grid;
+    padding: 1em;
+    gap: 1em;
+}
+
+.text-content > h1{
+    font-family: var(--ff-base-fraunces);
+}
+
+.text-content h2, p{
+    font-weight: var(--fw-500);
+    color: var(--very-dark-blue);
+}
+
+.text-content h2{
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    font-size: var(--fs-paragraph);
+}
+.text-content p{
+    line-height: 1.6em;
+}
+
+.text-content > .prices{
+    display: flex;
+    gap: 1.5em;
+    align-items: center;
+}
+
+.prices .current-price{
+    color: var(--dark-cyan);
+    font-size: 35px;
+    font-family: var(--ff-base-fraunces);
+    font-weight: var(--fw-700);
+}
+
+.prices .previous-price{
+    text-decoration: line-through;
+}
+.text-content > button{
+    border-radius: .5em;
+    border: none;
+    background-color: var(--dark-cyan);
+}
+
+.text-content > button a{
+    display: inline-block;
+    padding: 1em;
+    color: var(--white);
+    font-family: var(--ff-base);
+    font-weight: var(--fw-700);
+    font-size: var(--fs-paragraph);
+    text-decoration: none;
+    display: flex; /* this is shameful */
+    justify-content: center;
+    gap: 1em;
+}
+
+
+/* <!-- Feel free to remove these styles or customise in your own stylesheet 👍 --> */
+.attribution { font-size: 11px; text-align: center; margin-bottom: 1em;}
+.attribution a { color: hsl(228, 45%, 44%); }
