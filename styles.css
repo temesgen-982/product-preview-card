@@ -117,17 +117,19 @@ body{
     background-color: var(--dark-cyan);
 }
 
-.text-content > button a{
-    display: inline-block;
+.text-content > button{
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+
     padding: 1em;
-    color: var(--white);
+    
     font-family: var(--ff-base);
     font-weight: var(--fw-700);
     font-size: var(--fs-paragraph);
+
+    color: var(--white);
     text-decoration: none;
-    display: flex; /* this is shameful */
-    justify-content: center;
-    gap: 1em;
 }
 
 button:hover{
